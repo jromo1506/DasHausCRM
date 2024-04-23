@@ -1,0 +1,65 @@
+<h1>Datos extra necesarios</h1>
+
+<div>
+  <p>NACIONALIDAD</p>
+  <input class="input_style_1 w-75" id="nacionalidad" [(ngModel)]="nacionalidad">
+</div>
+<br>
+
+<div>
+  <p>ORIGENES</p>
+  <input class="input_style_1 w-75" id="origenes" [(ngModel)]="origenes">
+</div>
+<br>
+
+<div>
+  <p>DOMICILIO</p>
+  <input class="input_style_1 w-75" id="domicilio" [(ngModel)]="domicilio">
+</div>
+<br>
+
+<div>
+  <p>ESTADO CIVIL</p>
+  <input class="input_style_1 w-75" id="estadoCivil" [(ngModel)]="civil">
+</div>
+<br>
+
+<div>
+  <p>OCUPACION</p>
+  <input class="input_style_1 w-75" id="ocupacion" [(ngModel)]="ocupacion">
+</div>
+<br>
+
+<h1>Generar contrato</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Origen</th>
+      <th>Correo</th>
+      <th>Numero</th>
+      <th>Modelo</th>
+      <th>Vendedor</th>
+      <th>Estado</th>
+      <th>Editar
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+<tr *ngFor="let Leads of ListaLeads">
+    <td>{{ Leads.leadName }}</td>
+    <td>{{ Leads.leadOrigin }}</td>
+    <td>{{ Leads.leadEmail }}</td>
+    <td>{{ Leads.leadNumber }}</td>
+    <td>{{ Leads.leadModel }}</td>
+    <td>{{ Leads.nameVendor }}</td>
+    <td>{{ Leads.leadStatus }}</td>
+    <td>{{ Leads.datoextra }}</td>
+    <td (click)="createPdf(Leads.leadModel,'ETAPA','MEDIDAS',Leads.manzana,Leads.lote,'FRACCIONAMIENTO','MEDIDAS DE TERRENO','COLINDANCIAS',Leads.leadName, nacionalidad, origenes, domicilio, civil, ocupacion,'COSTO TOTAL','COSTO EN TEXTO','FECHA ACTUAL')">Generar contrato</td>
+  </tr>
+
+</tbody>
+</table>
+
+
+

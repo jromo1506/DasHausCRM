@@ -1,0 +1,29 @@
+<div class="verLeads">
+    <p class="title">prospectos</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Origen</th>
+            <th>Correo</th>
+            <th>Numero</th>
+            <th>Modelo</th>
+            <th>Apartado?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Leads of ListaLeads">
+            <td>{{ Leads.leadName }}</td>
+            <td>{{ Leads.leadOrigin }}</td>
+            <td>{{ Leads.leadEmail }}</td>
+            <td>{{ Leads.leadNumber }}</td>
+            <td>{{ Leads.leadModel }}</td>
+            <td>
+              <button (click)="avanzarlead(Leads._id)">Cambiar a apartado</button> 
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>
