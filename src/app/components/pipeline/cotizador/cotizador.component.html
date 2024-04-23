@@ -1,0 +1,131 @@
+<div>
+    <div class="flex" >
+        <div class="forms p-2">
+            <div class="ptb-1">
+                <p>Metros cuadrados</p>
+                <input [(ngModel)]="M2" (ngModelChange)="calcularPrecioSinEnganche()" class="input_style_1">
+            </div>
+
+            <div class="ptb-1">
+                <p>Costo por metro cuadrado</p>
+                <input [(ngModel)]="precio_M2" (ngModelChange)="calcularPrecioSinEnganche()" class="input_style_1">
+            </div>
+
+            <div class="ptb-1">
+                <p>Precio</p>
+                <p>$ {{precioSinEnganche | currency:'MX'}}</p>
+            </div>
+         
+
+            <div class="ptb-1">
+                <div>
+                    <p>Enganche</p>
+                </div>
+            
+                <div class="flex-sa">
+                    <div class="flex-aic">
+                        <label for="opcion1">Si</label>
+                        <input type="radio" id="opcion1" [checked]="hayEnganche === 'Si'" (change)="checkEnganche('Si')">
+                    </div>
+                    <div class="flex-aic">
+                        <label for="opcion2">No</label>
+                        <input type="radio" id="opcion2" [checked]="hayEnganche === 'No'" (change)="checkEnganche('No')">     
+                    </div>
+                </div>                                 
+            </div>
+            
+            <div id="inputEnganche" style="display: none;">
+                <div class="ptb-1"   >
+                    <p>Enganche</p>
+                    <input [(ngModel)]="enganche"  (ngModelChange)="calcularPrecioConEnganche()" class="input_style_1" >
+                </div>
+    
+                <div class="ptb-1">
+                    <p>Precio con enganche</p>
+                    <p>$ {{precioConEnganche | currency: 'MX'}}</p>
+                </div>
+    
+                
+    
+            </div>
+            <div class="">
+                <p>Plazos</p>
+                <input class="input_style_1" [(ngModel)]="this.plazos" (ngModelChange)="asignarPlazos()">
+            </div>
+
+        </div>
+
+        <div  style="width: 100%;">
+            <div  style="display: none;" id="tablaEnganche">
+                <p class="txt-c">ENGANCHE</p>
+                <table id="tabla">
+                    <thead>
+                      <tr>
+                        <th>Periodo</th>
+                        <th>Pago</th>
+                        <th>Fecha de pago</th>
+                        <th>Interés</th>
+                        <th>Capital Amortizado</th>
+                        <th>Saldo al final del periodo</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td></td>
+                        <td><input [(ngModel)]="pagoEnganche" (ngModelChange)="cambiarPagoEnganche()" type="number"></td>
+                        <td><input id="fechaAbono" type="date"></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{this.restantePagoEnganche}}</td>
+                      </tr>
+                      
+                    </tbody>    
+                </table>
+                <div class="flex-c">
+                    <div>
+                        <button class="p-1" (click)="abonarEnganche()">Abonar</button>
+                    </div>
+                   
+                </div>
+            </div>
+           
+            
+            <br>
+            <p class="txt-c">MENSUALIDADES</p>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Periodo</th>
+                    <th>Pago</th>
+                    <th>Fecha de pago</th>
+                    <th>Interés</th>
+                    <th>Capital Amortizado</th>
+                    <th>Saldo al final del periodo</th>
+                    
+                  </tr>
+                </thead>
+                <tbody id="trBody">
+                  <tr >
+                    <td id="c_periodo"></td>
+                    <td id="c_pago"></td>
+                    <td id="c_fecha"></td>
+                    <td id="c_interes"></td>
+                    <td id="c_capital"></td>
+                    <td id="c_saldo"></td>
+                  </tr>
+                  
+                  
+                </tbody>
+            </table>
+            <div class="txt-c">
+                <button class="p-1" (click)="capturaMensualidad()">Capturar</button>
+        
+            </div>
+        
+        
+        </div>
+       
+    </div>
+    
+</div>

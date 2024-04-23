@@ -1,0 +1,46 @@
+<div class="flex-col-c">
+    <div class="flex-sa">
+
+    </div>
+    <div class="flex-col-c  w-100">
+        <div class=" w-100 nav p-1 flex-air">
+            <div class="mr-3">
+                <input id="nombreMapa" type="text" class="input_style_1 mr-2">
+                <button (click)="crearMapa()" class="btn-style-1">Crear Mapa</button>
+            </div>
+            
+        </div>
+
+
+        <table>
+            <thead>
+              <tr>
+                <th>Nombre del mapa</th>
+                <th>Acción</th>
+         
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let map of mapas" >
+                <td>{{map.nombreMapa}}</td>
+           
+                <td class="flex-sa iconos">
+                    <i class="fa-solid fa-wrench"  (click)="configurarMapa(map._id)"></i>
+                    <i class="fa-solid fa-trash-can" (click)="eliminarMapa(map._id)"></i>
+
+                </td>
+               
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+
+
+
+        
+
+    </div>
+</div>

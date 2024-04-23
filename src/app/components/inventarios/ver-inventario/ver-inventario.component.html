@@ -1,0 +1,31 @@
+<div class="verLeads">
+    <p class="title">Inventario disponible</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Manzana</th>
+            <th>Lote</th>
+            <th>Precio de venta</th>
+            <th>Prototipo</th>
+            <th>Medidas de terreno</th>
+            <th>Terreno comercial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inv of arrInventarios" [id]="inv._id" (click)="selectaInventario(inv._id)">
+            <td>{{inv.manzana}}</td>
+            <td>{{inv.lote}}</td>
+            <td>{{inv.precioVenta}}</td>
+            <td>{{inv.prototipo}}</td>
+            <td>{{inv.medidas}}</td>
+            <td></td>
+           
+         
+          </tr>
+          
+        </tbody>
+      </table>
+
+    
+</div>
+

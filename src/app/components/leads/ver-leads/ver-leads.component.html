@@ -1,0 +1,37 @@
+<div class="verLeads">
+    <p class="title">Lista de leads</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Origen</th>
+            <th>Correo</th>
+            <th>Numero</th>
+            <th>Modelo</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Leads of ListaLeads">
+            <td>{{ Leads.leadName }}</td>
+            <td>{{ Leads.leadOrigin }}</td>
+            <td>{{ Leads.leadEmail }}</td>
+            <td>{{ Leads.leadNumber }}</td>
+            <td>{{ Leads.leadModel }}</td>
+            <td>{{ Leads.leadStatus }}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <app-hitrate-apartado></app-hitrate-apartado>
+
+      <app-leads-mes></app-leads-mes>
+
+     <app-leads-acomulados></app-leads-acomulados>
+    <app-leads-por-canal></app-leads-por-canal>
+    <app-inventario-disponible></app-inventario-disponible> 
+    <app-apartado-por-prototipo></app-apartado-por-prototipo>
+    <app-apartado-por-canal></app-apartado-por-canal>
+    <app-leads-vendor></app-leads-vendor>
+</div>

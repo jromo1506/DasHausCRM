@@ -1,0 +1,95 @@
+<div class="sidebar" *ngIf="seleccion.includes('Administrar')">
+    <div class="sidebar_opt" [routerLink]="['/dashboard/listaUsuarios']">
+        <div><i class="fa-solid fa-users" ></i></div>
+        <div>Ver usuarios</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/registerForm']">
+        <div><i class="fa-solid fa-user-plus" ></i></div>
+        <div>Añadir usuario</div>
+    </div>
+    <div class="sidebar_opt" >
+        <div><i class="fa-solid fa-user-pen"></i></div>
+        <div>Editar usuario</div>
+    </div>
+    <div class="sidebar_opt">
+        <div><i class="fa-solid fa-user-xmark"></i></div>
+        <div>Eliminar usuario</div>
+    </div>
+    
+</div>
+
+<div class="sidebar" *ngIf="seleccion.includes('Leads')">
+    <div class=" enf" >
+        
+        <div >Administrador</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/registerLead']">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
+        <div >Registrar lead</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/verLeads']">
+        <i class="fa-regular fa-address-card" ></i>
+        <div >Status de leads</div>
+    </div>
+
+    <div class="sidebar_opt" [routerLink]="['/dashboard/misLeads']">
+        <i class="fa-regular fa-address-card" ></i>
+        <div >Mis Leads</div>
+    </div>
+    <div class="enf" style="margin-top: 50px;" >
+       
+        <div >Ventas</div>
+    </div>
+
+    <div class="sidebar_opt" [routerLink]="['/dashboard/prospectos']">
+        <div><i class="fa-solid fa-file-invoice" ></i></div>
+        <div>Prospectos</div>
+    </div>
+
+    <div class="sidebar_opt" [routerLink]="['/dashboard/apartado']">
+        <div><i class="fa-solid fa-file-invoice" ></i></div>
+        <div>Apartado</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/firma']">
+        <div><i class="fa-solid fa-file-signature" ></i></div>
+        <div>Firma y entrega</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/postVenta']">
+        <div><i class="fa-solid fa-paste" ></i></div>
+        <div>Post-venta</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/contratos']">
+        <div><i class="fa-solid fa-file-invoice" ></i></div>
+        <div>Debug</div>
+    </div>
+        
+    
+    
+</div>
+
+<div class="sidebar" *ngIf="seleccion.includes('Inventarios')">
+    <div class=" enf" >
+        
+        <div >Inventarios</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/addInventory']">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
+        <div >Alta de inventario</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/verInventario']">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        <div >Ver Inventario</div>
+    </div>
+    <div class=" enf" >
+        
+        <div >Mapas</div>
+    </div>
+    <div class="sidebar_opt" [routerLink]="['/dashboard/menuMapas']">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <div >Generar Mapa</div>
+    </div>
+  
+    
+    
+</div>
+
